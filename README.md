@@ -2,9 +2,9 @@
 
 Re-decentralize!
 
- * Chris McCormick
- * chris@mccormick.cx
- * @mccrmx
+### Chris McCormick
+### chris@mccormick.cx
+### @mccrmx
 
 ???
 
@@ -111,7 +111,8 @@ How to write your own Bugout service.
 
 ---
 
-# Bugout box
+![Bugout-box logo](./img/bugout-box-logo.svg)
 
 A decentralized service appliance.
 
+![Bugout-box prototype](./img/bugout-box.jpg)
