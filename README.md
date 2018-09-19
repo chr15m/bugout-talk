@@ -5,16 +5,39 @@ Re-decentralize!
 ### Chris McCormick
 ### chris@mccormick.cx
 ### @mccrmx
+### github.com/chr15m
+
+https://github.com/chr15m/bugout
 
 ???
 
 Hi, my name is Chris and I'm here to talk about Bugout, which is a piece of software for re-decentralizing the web.
+
+The main idea behind Bugout is to run web services inside browser tabs, which anybody can do, rather than on VPS servers, which only a small set of technical elites can do.
 
 ---
 
 ![Bugout logo](./img/bugout-logo.svg)
 
 # Demo
+
+![Blue Screen of Death](./img/BSOD.jpg)
+
+???
+
+https://chr15m.github.io/bugout/examples/messageboard-server.html
+
+Because the idea of running a server inside a browser tab is quite a strange one I thought I'd start out by showing you how this works in practice.
+
+That will give you some context for the rest of this talk.
+
+Once I open this link you will a server boot up.
+
+The server is not running on a VPS somewhere but instead it is running inside a browser tab.
+
+The way you can reach this server is over WebRTC.
+
+Scan the QR code to access it.
 
 ---
 
@@ -36,7 +59,7 @@ install software
 
 Before we talk about the why of Bugout let's talk about three basic types of computer user.
 
-There is some overlap amongst these three groups obviously.
+There is some overlap amongst these three groups obviously. I'm guessing most people here belong to all three of these categories.
 
 Developers are people like you and me, who write code.
 
@@ -68,21 +91,77 @@ This has a centralizing effect on the internet. A much smaller set of people is 
 
 The peer-to-peer technology WebRTC allows browsers to talk to eachother directly over the internet. This talk is about using WebRTC to let people easily run their own servers. This talk is about running servers inside browser tabs.
 
-The trend here is that "run the software" becomes more democratic, but "install the software" becomes less democratic.
-
 ---
 
 # The web model
 
 ![Current web architecture](./img/bugout-old-way.svg)
 
-Centralization:
+Centralization pressures:
 
  * DNS
  * HTTPS
  * VPS
 
+Not "trust-minimized".
+
 ???
+
+What are the things that make it difficult for an ordinary person to install web based software?
+
+DNS is somewhat decentralized but registering a domain name is non trivial and you really need a domain name to run web based software.
+
+A domain name is required because HTTPS is required in almost all modern web systems. Ubiquitous encryption is good but HTTPS encryption uses a "certificate authority" model which is itself quite centralized and prone to error.
+
+Finally to run the server side component of the software requires access to a VPS. Most people barely know what a VPS is let alone how to SSH into a VPS and configure it and install the software.
+
+---
+
+# PHP?
+
+Many many problems, but quite democratic.
+
+???
+
+For all of it's many problems, PHP was quite a democratic web platform.
+
+PHP had good documentation and the install process was "upload files to server" which was quite easy. PHP was popular in an era when HTTPS was not required and getting a VPS and domain name with .
+
+---
+
+# The trend
+
+### Run software
+
+Becomes easier and easier.
+
+![Dove of peace](./img/Dove_peace.svg)
+
+???
+
+The act of running software is becoming easier and easier. Anybody can do it. More democratic.
+
+---
+
+# The trend
+
+### Install software
+
+Becomes harder and harder.
+
+![Sisyphus](./img/Sisyphus.jpg)
+
+???
+
+The act of installing the software becomes harder and harder. Only tech elite can do it. Less democratic.
+
+---
+
+# Trust-minimization
+
+> Practically all of these [web server] machines have architectures ... controlled by ... people who know and trust each other. From the point of view of a remote web or app user, these architectures are based on full trust in an unknown "root" administrator, who can control everything that happens on the server: they can read, alter, delete, or block any data on that computer at will.
+
+Nick Szabo, The dawn of trustworthy computing.
 
 ---
 
@@ -90,8 +169,9 @@ Centralization:
 
 ![Bugout web architecture](./img/bugout-new-way.svg)
 
-  * Client-server over WebRTC instead of HTTPS.
-  * Running servers inside browser tabs.
+  * Client-server over WebRTC.
+  * Servers inside browser tabs.
+  * Run by you, or somebody you trust.
 
 ---
 
